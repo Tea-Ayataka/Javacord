@@ -60,8 +60,7 @@ public class EventDispatcher {
     /**
      * This map which holds a queue for every object (usually a server) with tasks to call the waiting listeners.
      */
-    private final ConcurrentHashMap<Object, ConcurrentLinkedQueue<Runnable>> queuedListenerTasks
-            = new ConcurrentHashMap<>();
+    private final ConcurrentHashMap<Object, Queue<Runnable>> queuedListenerTasks = new ConcurrentHashMap<>();
 
     /**
      * A list with all objects which currently have a running listener.
