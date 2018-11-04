@@ -53,7 +53,6 @@ class DiscordApiImplTest extends Specification {
             'getRolesByNameIgnoreCase'               | [null]
             'getChannels'                            | []
             'getGroupChannels'                       | []
-            'getPrivateChannels'                     | []
             'getServerChannels'                      | []
             'getChannelCategories'                   | []
             'getServerTextChannels'                  | []

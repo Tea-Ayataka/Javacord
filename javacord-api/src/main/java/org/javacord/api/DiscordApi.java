@@ -114,7 +114,7 @@ public interface DiscordApi extends GloballyAttachableListenerManager {
      * change some channel specific cache settings, too.
      * Please notice that the cache is cleared only once every minute!
      *
-     * @param capacity The capacity of the message cache.
+     * @param capacity             The capacity of the message cache.
      * @param storageTimeInSeconds The maximum age of cached messages.
      */
     void setMessageCacheSize(int capacity, int storageTimeInSeconds);
@@ -207,7 +207,7 @@ public interface DiscordApi extends GloballyAttachableListenerManager {
      * The update might not be visible immediately as it's through the websocket and only a limited amount of
      * activity status changes is allowed per minute.
      *
-     * @param name The name of the activity.
+     * @param name         The name of the activity.
      * @param streamingUrl The streaming url of the activity.
      */
     void updateActivity(String name, String streamingUrl);
@@ -275,25 +275,25 @@ public interface DiscordApi extends GloballyAttachableListenerManager {
      *                               equation: <code>f(x): (x^1.5-(1/(1/(0.1*x)+1))*x^1.5)+(currentShard*6)</code>.
      *                               This would result in a delay which looks like this for a bot with 1 shard:
      *                               <table>
-     *                                  <caption style="display: none">Reconnect Delays</caption>
-     *                                  <tr>
-     *                                      <th>Attempt</th>
-     *                                      <th>Delay</th>
-     *                                  </tr>
-     *                                  <tr><td>1</td><td>1</td></tr>
-     *                                  <tr><td>2</td><td>2</td></tr>
-     *                                  <tr><td>3</td><td>4</td></tr>
-     *                                  <tr><td>4</td><td>6</td></tr>
-     *                                  <tr><td>5</td><td>7</td></tr>
-     *                                  <tr><td>...</td><td>...</td></tr>
-     *                                  <tr><td>10</td><td>16</td></tr>
-     *                                  <tr><td>15</td><td>23</td></tr>
-     *                                  <tr><td>20</td><td>30</td></tr>
-     *                                  <tr><td>...</td><td>...</td></tr>
-     *                                  <tr><td>50</td><td>59</td></tr>
-     *                                  <tr><td>100</td><td>91</td></tr>
-     *                                  <tr><td>150</td><td>115</td></tr>
-     *                                  <tr><td>...</td><td>...</td></tr>
+     *                               <caption style="display: none">Reconnect Delays</caption>
+     *                               <tr>
+     *                               <th>Attempt</th>
+     *                               <th>Delay</th>
+     *                               </tr>
+     *                               <tr><td>1</td><td>1</td></tr>
+     *                               <tr><td>2</td><td>2</td></tr>
+     *                               <tr><td>3</td><td>4</td></tr>
+     *                               <tr><td>4</td><td>6</td></tr>
+     *                               <tr><td>5</td><td>7</td></tr>
+     *                               <tr><td>...</td><td>...</td></tr>
+     *                               <tr><td>10</td><td>16</td></tr>
+     *                               <tr><td>15</td><td>23</td></tr>
+     *                               <tr><td>20</td><td>30</td></tr>
+     *                               <tr><td>...</td><td>...</td></tr>
+     *                               <tr><td>50</td><td>59</td></tr>
+     *                               <tr><td>100</td><td>91</td></tr>
+     *                               <tr><td>150</td><td>115</td></tr>
+     *                               <tr><td>...</td><td>...</td></tr>
      *                               </table>
      *                               Too many reconnect attempts may cause a token reset (usually 1000 per day), so you
      *                               should always make sure to not provide a function which might exceed this limit.
@@ -399,7 +399,7 @@ public interface DiscordApi extends GloballyAttachableListenerManager {
      * <p>If you want to update several settings at once, it's recommended to use the
      * {@link AccountUpdater} from {@link #createAccountUpdater()} ()} which provides a better performance!
      *
-     * @param avatar The new avatar.
+     * @param avatar   The new avatar.
      * @param fileType The type of the avatar, e.g. "png" or "jpg".
      * @return A future to check if the update was successful.
      */
@@ -466,7 +466,7 @@ public interface DiscordApi extends GloballyAttachableListenerManager {
      * <p>If you want to update several settings at once, it's recommended to use the
      * {@link AccountUpdater} from {@link #createAccountUpdater()} ()} which provides a better performance!
      *
-     * @param avatar The new avatar.
+     * @param avatar   The new avatar.
      * @param fileType The type of the avatar, e.g. "png" or "jpg".
      * @return A future to check if the update was successful.
      */
@@ -494,7 +494,7 @@ public interface DiscordApi extends GloballyAttachableListenerManager {
      * <p>If you want to update several settings at once, it's recommended to use the
      * {@link AccountUpdater} from {@link #createAccountUpdater()} ()} which provides a better performance!
      *
-     * @param avatar The new avatar.
+     * @param avatar   The new avatar.
      * @param fileType The type of the avatar, e.g. "png" or "jpg".
      * @return A future to check if the update was successful.
      */
@@ -581,7 +581,7 @@ public interface DiscordApi extends GloballyAttachableListenerManager {
      * Gets a user by its name and discriminator.
      * This method is case sensitive!
      *
-     * @param name The name of the user.
+     * @param name          The name of the user.
      * @param discriminator The discriminator of the user.
      * @return The user with the given name and discriminator.
      */
@@ -595,7 +595,7 @@ public interface DiscordApi extends GloballyAttachableListenerManager {
      * Gets a user by its name and discriminator.
      * This method is case insensitive!
      *
-     * @param name The name of the user.
+     * @param name          The name of the user.
      * @param discriminator The discriminator of the user.
      * @return The user with the given name and discriminator.
      */
@@ -638,7 +638,7 @@ public interface DiscordApi extends GloballyAttachableListenerManager {
      * This method is case sensitive!
      *
      * @param nickname The nickname of the users.
-     * @param server The server where to lookup the nickname.
+     * @param server   The server where to lookup the nickname.
      * @return A collection with all users with the given nickname on the given server.
      */
     default Collection<User> getCachedUsersByNickname(String nickname, Server server) {
@@ -653,7 +653,7 @@ public interface DiscordApi extends GloballyAttachableListenerManager {
      * This method is case insensitive!
      *
      * @param nickname The nickname of the users.
-     * @param server The server where to lookup the nickname.
+     * @param server   The server where to lookup the nickname.
      * @return A collection with all users with the given nickname on the given server.
      */
     default Collection<User> getCachedUsersByNicknameIgnoreCase(String nickname, Server server) {
@@ -668,7 +668,7 @@ public interface DiscordApi extends GloballyAttachableListenerManager {
      * This method is case sensitive!
      *
      * @param displayName The display name of the users.
-     * @param server The server where to lookup the display name.
+     * @param server      The server where to lookup the display name.
      * @return A collection with all users with the given display name on the given server.
      */
     default Collection<User> getCachedUsersByDisplayName(String displayName, Server server) {
@@ -683,7 +683,7 @@ public interface DiscordApi extends GloballyAttachableListenerManager {
      * This method is case insensitive!
      *
      * @param displayName The display name of the users.
-     * @param server The server where to lookup the display name.
+     * @param server      The server where to lookup the display name.
      * @return A collection with all users with the given display name on the given server.
      */
     default Collection<User> getCachedUsersByDisplayNameIgnoreCase(String displayName, Server server) {
@@ -725,7 +725,7 @@ public interface DiscordApi extends GloballyAttachableListenerManager {
     /**
      * Gets a message by its id.
      *
-     * @param id The id of the message.
+     * @param id      The id of the message.
      * @param channel The channel of the message.
      * @return The message with the given id.
      * @see TextChannel#getMessageById(long)
@@ -737,7 +737,7 @@ public interface DiscordApi extends GloballyAttachableListenerManager {
     /**
      * Gets a message by its id.
      *
-     * @param id The id of the message.
+     * @param id      The id of the message.
      * @param channel The channel of the message.
      * @return The message with the given id.
      * @see TextChannel#getMessageById(String)
@@ -940,7 +940,6 @@ public interface DiscordApi extends GloballyAttachableListenerManager {
      */
     default Collection<Channel> getChannels() {
         Collection<Channel> channels = new ArrayList<>();
-        channels.addAll(getPrivateChannels());
         channels.addAll(getServerChannels());
         channels.addAll(getGroupChannels());
         return Collections.unmodifiableCollection(channels);
@@ -952,20 +951,6 @@ public interface DiscordApi extends GloballyAttachableListenerManager {
      * @return A collection with all group channels of the bot.
      */
     Collection<GroupChannel> getGroupChannels();
-
-    /**
-     * Gets a collection with all private channels of the bot.
-     *
-     * @return A collection with all private channels of the bot.
-     */
-    default Collection<PrivateChannel> getPrivateChannels() {
-        return Collections.unmodifiableList(
-                getCachedUsers().stream()
-                        .map(User::getPrivateChannel)
-                        .filter(Optional::isPresent)
-                        .map(Optional::get)
-                        .collect(Collectors.toList()));
-    }
 
     /**
      * Gets a collection with all server channels of the bot.
@@ -1018,7 +1003,6 @@ public interface DiscordApi extends GloballyAttachableListenerManager {
      */
     default Collection<TextChannel> getTextChannels() {
         Collection<TextChannel> channels = new ArrayList<>();
-        channels.addAll(getPrivateChannels());
         channels.addAll(getServerTextChannels());
         channels.addAll(getGroupChannels());
         return Collections.unmodifiableCollection(channels);
@@ -1031,7 +1015,6 @@ public interface DiscordApi extends GloballyAttachableListenerManager {
      */
     default Collection<VoiceChannel> getVoiceChannels() {
         Collection<VoiceChannel> channels = new ArrayList<>();
-        channels.addAll(getPrivateChannels());
         channels.addAll(getServerVoiceChannels());
         channels.addAll(getGroupChannels());
         return Collections.unmodifiableCollection(channels);
@@ -1413,32 +1396,6 @@ public interface DiscordApi extends GloballyAttachableListenerManager {
                 getServerVoiceChannels().stream()
                         .filter(channel -> channel.getName().equalsIgnoreCase(name))
                         .collect(Collectors.toList()));
-    }
-
-    /**
-     * Gets a private channel by its id.
-     *
-     * @param id The id of the private channel.
-     * @return The private channel with the given id.
-     */
-    default Optional<PrivateChannel> getPrivateChannelById(long id) {
-        return getPrivateChannels().stream()
-                .filter(channel -> channel.getId() == id)
-                .findAny();
-    }
-
-    /**
-     * Gets a private channel by its id.
-     *
-     * @param id The id of the private channel.
-     * @return The private channel with the given id.
-     */
-    default Optional<PrivateChannel> getPrivateChannelById(String id) {
-        try {
-            return getPrivateChannelById(Long.valueOf(id));
-        } catch (NumberFormatException e) {
-            return Optional.empty();
-        }
     }
 
     /**
